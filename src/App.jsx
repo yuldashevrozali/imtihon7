@@ -4,6 +4,7 @@ import About from "./pages/about";
 import './App.css'
 import Products from "./pages/products";
 import Register from "./pages/register";
+import Login from "./pages/login";
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
           <Route path='/about' element={<About />} />
           <Route path='/products' element={<Products />} />
           <Route path='/sign-up' element={<Register />} />
+          <Route path='/sign-in' element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>

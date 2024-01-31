@@ -85,6 +85,12 @@
     align-items: center;
 }
 
+.register-form {
+    text-align: center;
+    margin-left: 350px;
+    margin-top: 50px;
+}
+
 .hero12{
     padding-left: 100px;
     padding-right: 100px;
