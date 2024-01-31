@@ -1,7 +1,8 @@
 import { Checkbox, Input, Select } from 'antd';
 import React, { useState, useEffect } from 'react';
 
-export default function Products() {
+export default function Products(props) {
+    const {checkbox} = props;
     const [selectedPrice, setSelectedPrice] = useState(100);
     const [selectedProduct, setSelectedProduct] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
@@ -54,9 +55,9 @@ export default function Products() {
 
 
     return (
-        <div>
-            <div className="inputs mt-100 ml-100 p-10 mr-100">
-                <div className="inputs flex">
+        <div className='pt-100' style={checkbox ?{background:'#272935', color:'white'} :{background:'white'}}>
+            <div style={checkbox ?{background:'#181920', color:'white'} :{background:'white'}} className="inputs ml-100 p-10 mr-100">
+                <div style={checkbox ?{background:'#181920', color:'white'} :{background:'white'}} className="inputs flex">
                     <div>
                         <label htmlFor="product">search products</label><br />
                         <Input style={{ width: '250px' }} id='product' />
@@ -134,7 +135,7 @@ export default function Products() {
                 <div className='all-products'>
 
                     {data.map((product, index) => (
-                        <div key={index} className="card w-96 bg-base-100 shadow-xl">
+                        <div style={checkbox ?{background:'#272935', color:'white'} :{background:'white'}} key={index} className="card w-96 bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
                                 <img src={product.attributes.image} alt="Shoes" className="rounded-xl" />
                             </figure>

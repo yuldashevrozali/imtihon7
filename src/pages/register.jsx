@@ -101,7 +101,6 @@ const Register = () => (
             </Form.Item>
         </Form>
     </div>
-
 );
 
 export default Register;

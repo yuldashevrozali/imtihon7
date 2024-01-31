@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Home() {
+export default function Home(props) {
+  const {checkbox} = props;
   const [data, setdata] = useState([]);
 
   useEffect(() => {
@@ -15,9 +16,8 @@ export default function Home() {
   console.log(data);
 
   return (
-    <>
-      <div className='flex mt-100 pl-100'>
-        {/* ... your existing code ... */}
+    <div style={checkbox ?{background:'#272935', color:'white'} :{background:'white'}}  >
+      <div  className='flex pt-100 pl-100'>
         <div className="hero-left">
           <div className="hero-text">
             <h1>We are changing the way people shop</h1>
@@ -25,7 +25,7 @@ export default function Home() {
           <div className="info">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellat explicabo enim soluta temporibus asperiores aut obcaecati perferendis porro nobis.</p>
           </div>
-          <div className="button"><button className="btn bg-blue-600 text-base-200 mt-35">Our Products</button></div>
+          <div className="button"><button style={checkbox ?{background:'#FF7AC6', color:'white'} :{background:'#057AFF'}} className="btn bg-blue-600 text-base-200 mt-35">Our Products</button></div>
         </div>
         <div className="hero-right">
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
@@ -50,18 +50,18 @@ export default function Home() {
         <hr />
         <div className="products-uch flex">
           {data.map((product, index) => (
-            <div key={index} className="card w-96 bg-base-100 shadow-xl">
+            <div key={index} style={checkbox ?{background:'#272935', color:'white'} :{background:'white'}} className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img src={product.attributes.image} alt="Shoes" className="rounded-xl" />
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{product.attributes.title}</h2>
-                <p>${product.attributes.price}</p>
+                <p style={checkbox ?{color:'#9D95ED'} :{color:'#394E6A'}}>${product.attributes.price}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
